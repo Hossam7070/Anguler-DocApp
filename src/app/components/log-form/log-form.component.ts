@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators, FormArray } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-log-form',
@@ -21,7 +22,12 @@ export class LogFormComponent implements OnInit {
 
     password: ['', [Validators.required, Validators.minLength(4)]],
   });
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
   onSubmit() {
@@ -33,14 +39,19 @@ export class LogFormComponent implements OnInit {
     this.result = JSON.stringify({ username: 'admin', password: 'admin' });
     console.log(this.loginForm.value);
     let head = new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     });
-    this.http.post('http://localhost:3000/admin/login', this.loginForm.value , {headers : head})
+    this.http
+      .post('http://localhost:3000/admin/login', this.loginForm.value, {
+        headers: head,
+      })
 
-        .subscribe((data:any) => {
-          console.log(data['token']);
-          localStorage.setItem('token',data['token'])
-        });
+      .subscribe((data: any) => {
+        if(data['token']){
+        localStorage.setItem('token', data['token']);
+        this.router.navigate(['/admin-dash']);
+      }else{
+        console.log("not admin")
+      }});
   }
 }
-

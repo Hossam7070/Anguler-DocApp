@@ -14,6 +14,11 @@ import { DocListComponent } from './components/doc-list/doc-list.component';
 import { DocDetailComponent } from './components/doc-detail/doc-detail.component';
 import { RegFormComponent } from './components/reg-form/reg-form.component';
 import { LogFormComponent } from './components/log-form/log-form.component';
+import { AdminDashComponent } from './components/admin-dash/admin-dash.component';
+import { AdminContorlCardComponent } from './components/admin-contorl-card/admin-contorl-card.component';
+import { EditCardComponent } from './components/edit-card/edit-card.component';
+import { DeleteCardComponent } from './components/delete-card/delete-card.component';
+import { AddCardComponent } from './components/add-card/add-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { LogFormComponent } from './components/log-form/log-form.component';
     DocListComponent,
     DocDetailComponent,
     RegFormComponent,
-    LogFormComponent
+    LogFormComponent,
+    AdminDashComponent,
+    AdminContorlCardComponent,
+    EditCardComponent,
+    DeleteCardComponent,
+    AddCardComponent
   ],
   imports: [
     CommonModule,
