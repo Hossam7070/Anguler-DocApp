@@ -17,7 +17,7 @@ export class AdminContorlCardComponent implements OnInit {
   ngOnInit(): void {
   }
   edit(){
-    this.router.navigate(['/docDetails',{id:this.id}])
+    this.router.navigate(['/docedit',{id:this.id}])
   }
   deleteD(){
     this.router.navigate(['/docDel',{id:this.id}])

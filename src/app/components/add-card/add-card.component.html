@@ -1,1 +1,45 @@
-<p>add-card works!</p>
+
+<div class="card container" style="width: 32rem;">
+
+  <div class="card-body">
+    <form  [formGroup]="addDocForm" class="container"  (ngSubmit)="onSubmit()" >
+      <div class="form-group">
+      <label for="doctorName">Name</label>
+      <input type="text" name="doctorName" id="doctorName" placeholder=""formControlName="doctorName" placeholder="Enter doctor's name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="phone">phone</label>
+      <input type="text" name="phone" id="phone" placeholder=""formControlName="phone" placeholder="Enter doctor's phone" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="offDays">offDays</label>
+      <input type="text" name="offDays" id="offDays" formControlName="offDays" placeholder="offDays" class="form-control">
+    </div>
+
+      <div class="form-group">
+        <label for="age">age</label>
+      <input type="text" name="age" id="password" formControlName="age" placeholder="Enter doctor age" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="speciality">speciality</label>
+      <input type="text" name="speciality" id="speciality" formControlName="speciality" placeholder="Enter doctor speciality" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="rating">rating</label>
+      <input type="text" name="rating" id="rating" formControlName="rating" placeholder="Enter doctor rating" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="city">city</label>
+      <input type="text" name="city" id="city" formControlName="city" placeholder="Enter doctor city" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="gender">gender</label>
+      <input type="text" name="gender" id="gender" formControlName="gender" placeholder="Enter doctor gender" class="form-control">
+      </div>
+
+      <input type="submit" class="btn btn-primary"value="Save" id="signup" [disabled]="!addDocForm.valid">
+
+    </form>
+  </div>
+</div>
+
