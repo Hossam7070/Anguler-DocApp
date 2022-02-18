@@ -12,6 +12,8 @@ import { DocCardComponent } from './components/doc-card/doc-card.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DocListComponent } from './components/doc-list/doc-list.component';
 import { DocDetailComponent } from './components/doc-detail/doc-detail.component';
+import { RegFormComponent } from './components/reg-form/reg-form.component';
+import { LogFormComponent } from './components/log-form/log-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DocDetailComponent } from './components/doc-detail/doc-detail.component
     DocCardComponent,
     NavBarComponent,
     DocListComponent,
-    DocDetailComponent
+    DocDetailComponent,
+    RegFormComponent,
+    LogFormComponent
   ],
   imports: [
     CommonModule,

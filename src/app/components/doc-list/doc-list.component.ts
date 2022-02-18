@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DoctorServicesService } from '../../doctor-services.service';
+// import { DoctorServicesService } from '../../doctor-services.service';
 import { HttpClient } from '@angular/common/http';
+
+
 @Component({
   selector: 'app-doc-list',
   templateUrl: './doc-list.component.html',
